@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek Javaranayaka Chaluvarayee | Data Scientist, Cardiff</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="#" class="logo">abhishek<em>.jc</em></a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+  <a href="mailto:abhishekjc23@gmail.com" class="nav-cta">Get in touch</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="eyebrow">MSc Data Science &amp; Analytics &middot; Cardiff University &middot; 2026</div>
+  <h1>Abhishek<br><strong>Javaranayaka Chaluvarayee</strong></h1>
+  <p class="hero-lead">MSc Data Science &amp; Analytics graduate (Distinction), Cardiff University. On my COPD detection project I split the data by patient rather than by recording, a leakage check most published papers on this dataset skip, because without it the model would have been tested on patients it had already seen. Below: that classifier, an NLP pipeline forecasting equity volatility from 2,058 SEC filings, the backend for a 6-person LLM platform, a statistical analysis of 2,930 house sales in R, and a Power BI workforce dashboard.</p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn-primary">See my work</a>
+    <a href="https://github.com/AbhishekJavaranayakChaluvarayee" target="_blank" class="btn-ghost">GitHub</a>
+    <a href="https://linkedin.com/in/abhishek-javaranayaka-chaluvarayee-910451340" target="_blank" class="btn-ghost">LinkedIn</a>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="sh"><span class="sh-n">01</span><h2 class="sh-t">Selected projects</h2></div>
+  <div class="project-stack">
+
+    <div class="pcard reveal">
+      <div class="pmeta"><span class="badge bd">MSc Dissertation</span><span class="yr">Cardiff University &middot; 2025</span></div>
+      <div class="pt">Equity Volatility Forecasting: FinBERT NLP Pipeline on 2,058 SEC Filings</div>
+      <div class="result">12.6% RMSE improvement &middot; DM p = 0.034 &middot; NLP gains 2&times; larger under market stress</div>
+      <p class="pd">NLP signals from company risk disclosures proved 2&times; stronger under market stress and 14&times; stronger when dictionary signals were weak, confirmed by a Diebold-Mariano test (p = 0.034). Built a leakage-safe pipeline linking 2,058 SEC filings from 122 firms to 10-day volatility forecasts, achieving 12.6% RMSE improvement. Repaired 73 of 230 corrupted filings through a custom 4-stage extraction pipeline.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FinBERT</span><span class="tag">HuggingFace</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">scikit-learn</span><span class="tag">SEC EDGAR API</span><span class="tag">BeautifulSoup</span><span class="tag">Pandas</span></div>
+      <div class="plinks"><a href="https://github.com/AbhishekJavaranayakChaluvarayee/mda-volatility-forecasting" target="_blank" class="plink"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code &amp; README</a></div>
+      <div class="chart-block">
+        <img src="images/finbert-chart.png" alt="FinBERT model performance chart" loading="lazy">
+        <div class="chart-cap"><strong>NLP gains are twice as large when markets are stressed, exactly when forecasting is hardest.</strong> Model 3 (FinBERT + market features) reduces RMSE by 0.0088 in high-volatility periods vs 0.0039 in calm conditions. From Figure 5.2, dissertation holdout 2023&ndash;2024 (n = 786).</div>
+      </div>
+    </div>
+
+    <div class="pcard reveal">
+      <div class="pmeta"><span class="badge ba">Deep Learning &middot; Cardiff University</span><span class="yr">Applied Machine Learning &middot; 2025</span></div>
+      <div class="pt">COPD Detection from Lung Sounds: ResNet-18 on ICBHI 2017</div>
+      <div class="result">91.5% test accuracy &middot; COPD recall 0.96 &middot; ROC-AUC 0.96 &middot; zero patient leakage</div>
+      <p class="pd">Achieved 0.96 ROC-AUC and 0.96 recall for COPD detection: 96 of every 100 COPD patients correctly flagged. Built on 920 lung recordings from 126 patients, split by patient so the model never trained and tested on the same person. Fixed a 7.27:1 class imbalance using weighted loss, prioritising recall because missed diagnoses carry real clinical cost.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">ResNet-18</span><span class="tag">Transfer Learning</span><span class="tag">BCEWithLogitsLoss</span><span class="tag">scikit-learn</span><span class="tag">Pillow</span><span class="tag">Google Colab</span></div>
+      <div class="plinks"><a href="https://github.com/AbhishekJavaranayakChaluvarayee/copd-detection-resnet18" target="_blank" class="plink"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code &amp; README</a></div>
+      <div class="chart-block">
+        <img src="images/copd-detection.png" alt="COPD detection model performance chart" loading="lazy">
+        <div class="chart-cap"><strong>End-to-end pipeline: heterogeneous lung sounds &rarr; standardised Mel spectrograms &rarr; class-weighted ResNet-18 &rarr; binary COPD prediction.</strong> COPD recall of 0.96 means 96% of positive cases correctly identified on the held-out patient-level test set. From Figure 4, CMT507 Group Report, Cardiff 2025.</div>
+      </div>
+    </div>
+
+    <div class="pcard reveal">
+      <div class="pmeta"><span class="badge br">Team Lead &middot; Backend Architect</span><span class="yr">Cardiff University &middot; 2025</span></div>
+      <div class="pt">C-LEIA: LLM Requirements Elicitation Platform, 6-Person Team</div>
+      <div class="result">Sub-2s latency &middot; 128 issues tracked &middot; GDPR-aligned schema</div>
+      <p class="pd">Built the entire backend for a 6-person LLM platform in five weeks as sole backend engineer, managing 128 GitLab issues across the project. Diagnosed a concurrency bug that only appeared under multi-user load, then fixed it with explicit rollback handling and logging. Switched the LLM backend from Gemma to Mistral mid-project to meet a hosting constraint the team hit partway through.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MySQL</span><span class="tag">SQLAlchemy</span><span class="tag">Ollama / Mistral</span><span class="tag">Pydantic</span><span class="tag">REST APIs</span><span class="tag">GitLab</span></div>
+      <div class="plinks"><a href="https://github.com/AbhishekJavaranayakChaluvarayee/C-LEIA-TEAM-LEAD-" target="_blank" class="plink"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code &amp; README</a></div>
+      <div class="chart-block">
+        <img src="images/omni.png" alt="Omni AI assistant interface screenshot" loading="lazy">
+        <div class="chart-cap"><strong>Onboarding flow for the generated AI assistant.</strong> Business details and persona inputs are entered here. This is the step that exposed the concurrency bug above: multiple users completing setup at the same time is what surfaced the race condition.</div>
+      </div>
+    </div>
+
+    <div class="pcard reveal">
+      <div class="pmeta"><span class="badge br">Team Lead &middot; 5-Person Group</span><span class="yr">Statistical Methods &middot; 2026</span></div>
+      <div class="pt">Statistical Analysis of the Ames Housing Dataset, R</div>
+      <div class="result">2,930 properties &middot; 4 regression models compared &middot; 16.6% RMSE improvement on held-out test data</div>
+      <p class="pd">A quadratic living-area model cut test RMSE from $51,124 to $42,639, a 16.6% improvement, while also correcting the heteroscedasticity the baseline model had. Confirmed via hypothesis testing that central air adds a 14.6% price premium (Welch t-test, p &lt; 2.2&times;10&#8315;&sup1;&sup6;) and neighbourhood location is highly significant (ANOVA F = 387, p &lt; 2&times;10&#8315;&sup1;&sup6;). Fitted Normal, Lognormal and Gamma distributions via MLE across 2,930 property sales to justify the log-transform used throughout.</p>
+      <div class="tags"><span class="tag">R</span><span class="tag">tidyverse</span><span class="tag">MASS</span><span class="tag">car</span><span class="tag">fitdistrplus</span><span class="tag">MLE</span><span class="tag">ANOVA</span><span class="tag">Regression Diagnostics</span></div>
+      <div class="plinks"><a href="https://github.com/AbhishekJavaranayakChaluvarayee/ames-housing-analysis" target="_blank" class="plink"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code &amp; README</a></div>
+      <div class="chart-block">
+        <img src="images/ames-rmse.png" alt="Ames housing RMSE comparison chart" loading="lazy">
+        <div class="chart-cap"><strong>Test RMSE comparison.</strong> The chart compares test-set RMSE across the base model, Gr_Liv_Area model, Overall_Cond model, and Total_Bsmt_SF model. The Gr_Liv_Area model has the lowest RMSE, showing the best predictive performance.</div>
+      </div>
+    </div>
+
+    <div class="pcard reveal">
+      <div class="pmeta"><span class="badge bg">Data Visualisation &middot; Cardiff University</span><span class="yr">DAV Coursework &middot; 2025</span></div>
+      <div class="pt">AI Workforce Impact Dashboard: Power BI</div>
+      <div class="result">Multi-industry &middot; 3-layer drill-down &middot; automation-risk vs job-growth comparison</div>
+      <p class="pd">Roles with the highest automation risk, including ML and data engineering, also show above-average job growth, a pattern that runs against the assumption that AI displaces the most technical jobs first. Built as a three-layer dashboard (KPI overview, geographic map, skill-level drill-down) using DAX and Power Query across multiple industries and regions.</p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modelling</span><span class="tag">KPI Design</span><span class="tag">Spatial Visualisation</span></div>
+      <div class="plinks"><a href="https://github.com/AbhishekJavaranayakChaluvarayee/ai-workforce-dashboard" target="_blank" class="plink"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code &amp; README</a></div>
+      <div class="chart-block">
+        <img src="images/powerbi-dashboard.png" alt="Power BI dashboard screenshot" loading="lazy">
+        <div class="chart-cap"><strong>Automation risk and job growth shown side by side.</strong> These are the two panels where the paradox above is visible at a glance.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Technical skills</h2></div>
+  <div class="sg">
+    <div class="s reveal"><div class="sn">Machine Learning</div><div class="sp"><span class="spill">Random Forest</span><span class="spill">XGBoost</span><span class="spill">Elastic Net</span><span class="spill">scikit-learn</span><span class="spill">KMeans</span><span class="spill">t-SNE</span><span class="spill">PCA</span><span class="spill">Feature Engineering</span></div></div>
+    <div class="s reveal"><div class="sn">Deep Learning</div><div class="sp"><span class="spill">PyTorch</span><span class="spill">ResNet-18</span><span class="spill">Transfer Learning</span><span class="spill">CNN</span><span class="spill">BCEWithLogitsLoss</span><span class="spill">ReduceLROnPlateau</span></div></div>
+    <div class="s reveal"><div class="sn">NLP &amp; LLMs</div><div class="sp"><span class="spill">HuggingFace Transformers</span><span class="spill">FinBERT</span><span class="spill">Ollama LLM</span><span class="spill">Tokenisation</span><span class="spill">Prompt Engineering</span><span class="spill">Recommendation Systems</span></div></div>
+    <div class="s reveal"><div class="sn">Statistics &amp; Evaluation</div><div class="sp"><span class="spill">ROC-AUC</span><span class="spill">F1-Score</span><span class="spill">Bootstrap CI</span><span class="spill">Diebold-Mariano</span><span class="spill">Cross-Validation</span><span class="spill">ANOVA</span><span class="spill">Hypothesis Testing</span><span class="spill">MLE</span><span class="spill">Regression Diagnostics</span></div></div>
+    <div class="s reveal"><div class="sn">Languages &amp; Data</div><div class="sp"><span class="spill">Python</span><span class="spill">R</span><span class="spill">SQL / MySQL</span><span class="spill">Pandas</span><span class="spill">tidyverse</span><span class="spill">Power BI</span><span class="spill">DAX</span><span class="spill">Bokeh</span></div></div>
+    <div class="s reveal"><div class="sn">Engineering</div><div class="sp"><span class="spill">FastAPI</span><span class="spill">REST APIs</span><span class="spill">SQLAlchemy</span><span class="spill">Git / GitLab</span><span class="spill">Docker</span></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sh"><span class="sh-n">03</span><h2 class="sh-t">Work experience</h2></div>
+  <div class="timeline">
+    <div class="job reveal">
+      <div class="job-head">
+        <div><div class="job-role">Data Science Intern</div><div class="job-co">MedTourEasy &nbsp;&middot;&nbsp; Remote</div></div>
+        <div class="job-date">Jun 2025 &ndash; Jul 2025</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Built a content-based NLP recommendation system across 1,472 Sephora products: tokenised ingredient lists into binary document-term matrices, applied t-SNE dimensionality reduction, and validated cluster quality via KMeans silhouette scoring.</li>
+        <li>Replaced a multi-step manual product comparison workflow with a single-hover Bokeh ingredient-similarity visualisation; structured output directly for A/B testing and ranking pipeline integration.</li>
+      </ul>
+    </div>
+    <div class="job reveal">
+      <div class="job-head">
+        <div><div class="job-role">Web Developer</div><div class="job-co">Dream Buzz Solutions &nbsp;&middot;&nbsp; Contract</div></div>
+        <div class="job-date">Aug 2023 &ndash; Sep 2023</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Sole developer on a commercial restaurant website: managed the client brief, built Python and SQL backend workflows for dynamic content management, and delivered the HTML/CSS frontend within a 2-month contract.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sh"><span class="sh-n">04</span><h2 class="sh-t">Education &amp; certifications</h2></div>
+  <div class="edu-cert">
+    <div class="edu-col">
+      <div class="edu reveal">
+        <div class="edu-d">MSc Data Science &amp; Analytics (Distinction)</div>
+        <div class="edu-i">Cardiff University &nbsp;&middot;&nbsp; Jan 2025 &ndash; May 2026</div>
+        <div class="edu-t">Dissertation: Do MD&amp;A Textual Risk Signals Improve Equity Volatility Forecasting? Supervised by Dr Anqi Liu, School of Mathematics.</div>
+        <div class="grades"><span class="grade">Computational Data Science: 82</span><span class="grade">Foundations of Stats &amp; DS: 80</span><span class="grade">Applied ML: 76</span><span class="grade">Operational Research: 76</span></div>
+      </div>
+      <div class="edu reveal">
+        <div class="edu-d">BE Electronics &amp; Communication Engineering</div>
+        <div class="edu-i">NIE Institute of Technology, Mysuru &nbsp;&middot;&nbsp; 2020 &ndash; 2024</div>
+        <div class="edu-t">Four-year undergraduate engineering degree.</div>
+      </div>
+    </div>
+    <div class="cert-col">
+      <div class="cert reveal"><div class="cert-dot"></div><div><div class="cert-n">Google Data Analytics Professional</div><div class="cert-i">Coursera &middot; Google</div></div></div>
+      <div class="cert reveal"><div class="cert-dot"></div><div><div class="cert-n">IBM Data Science Professional</div><div class="cert-i">Coursera &middot; IBM</div></div></div>
+      <div class="cert reveal"><div class="cert-dot"></div><div><div class="cert-n">Python DSA + LeetCode</div><div class="cert-i">Udemy &middot; 2024</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sh"><span class="sh-n">05</span><h2 class="sh-t">Get in touch</h2></div>
+  <div class="contact-box reveal">
+    <div class="contact-flag">Available immediately, any UK sector</div>
+    <p class="contact-sub">Looking for graduate data science and analytics roles across the UK.</p>
+    <div class="cbtnrow">
+      <a href="mailto:abhishekjc23@gmail.com" class="cbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> abhishekjc23@gmail.com</a>
+      <a href="https://linkedin.com/in/abhishek-javaranayaka-chaluvarayee-910451340" target="_blank" class="cbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+      <a href="https://github.com/AbhishekJavaranayakChaluvarayee" target="_blank" class="cbtn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>abhishek javaranayaka chaluvarayee &nbsp;&middot;&nbsp; cardiff, uk &nbsp;&middot;&nbsp; abhishekjc23@gmail.com</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
